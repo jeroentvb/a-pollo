@@ -1,0 +1,21 @@
+<% include head %>
+
+<main>
+  <h1><%= data.question %></h1>
+
+  <section>
+    <% data.options.forEach(option => {
+      if (option.title) { %>
+        <h3><%= option.title %></h3>
+        <p><%= option.value %></p>
+      <% }
+    }) %>
+  </section>
+
+  <section>
+    <h3>Deel de poll</h3>
+    <a href="<%= data.url %>" target="_blank"><%= data.url %></a>
+  </section>
+</main>
+
+<% include tail %>

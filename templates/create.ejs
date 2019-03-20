@@ -1,0 +1,22 @@
+<% include head %>
+
+<main>
+  <h1>Maak een poll</h1>
+
+  <form action="/create-poll" method="post">
+    <label for="question">Vraag</label>
+    <input id="question" type="text" name="question" placeholder="Is de aarde plat?">
+
+    <h2>Antwoorden</h2>
+    <% for(let i=0; i < 6; i++) { %>
+      <label class="hidden" for="option-<%= i + 1 %>">Option <%= i + 1 %></label>
+      <input id="option-<%= i + 1 %>" type="text" name="option<%= i + 1 %>">
+    <% } %>
+
+    <input type="submit" name="more-options" value="Meer antwoorden" formaction="/more-options">
+
+    <input type="submit" name="submit">
+  </form>
+</main>
+
+<% include tail %>

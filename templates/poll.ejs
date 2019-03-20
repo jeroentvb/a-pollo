@@ -1,0 +1,19 @@
+<% include head %>
+
+<main>
+  <h1><%= data.question %></h1>
+
+  <form action="/submit-answer/<%= data.id %>" method="post">
+    <% data.options.forEach((option, i) => {
+      if (option.title) { %>
+        <input id="option<%= i + 1 %>" type="radio" name="option" value="option<%= i + 1 %>value">
+        <label for="option<%= i + 1 %>"><%= option.title %></label>
+      <% }
+    }) %>
+
+    <input type="submit" name="submit">
+  </form>
+
+</main>
+
+<% include tail %>
