@@ -1,0 +1,33 @@
+// @font-face {
+//   font-family: 'Fira Code';
+//   src: local("FiraCode-Regular"),
+//         url("/fonts/FiraCode-Regular.woff2") format("woff2"),
+//         url("/fonts/FiraCode-Regular.woff") format("woff");
+//   font-weight: 400;
+// }
+//
+// @font-face {
+//   font-family: 'Fira Code';
+//   src: local("FiraCode-Medium"),
+//         url("/fonts/FiraCode-Medium.woff2") format("woff2"),
+//         url("/fonts/FiraCode-Medium.woff") format("woff");
+//   font-weight: 500;
+// }
+//
+// @font-face {
+//   font-family: 'Fira Code';
+//   src: local("FiraCode-Bold"),
+//         url("/fonts/FiraCode-Bold.woff2") format("woff2"),
+//         url("/fonts/FiraCode-Bold.woff") format("woff");
+//   font-weight: 700;
+// }
+
+body {
+  font-family: 'system-ui', sans-serif;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fira Code', system-ui, sans-serif;
+}

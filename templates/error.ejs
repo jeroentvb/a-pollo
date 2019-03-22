@@ -1,0 +1,16 @@
+<% include partials/head %>
+
+<main class="error">
+  <h1>Error!</h1>
+  <p><%= message %></p>
+  <a id="back-button" href="/" class="button">Back</a>
+</main>
+
+<script type="text/javascript">
+  document.getElementById('back-button').addEventListener('click', function (e) {
+    e.preventDefault()
+    window.history.back()
+  })
+</script>
+
+<% include partials/tail %>

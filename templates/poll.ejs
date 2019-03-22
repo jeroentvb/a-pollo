@@ -1,19 +1,22 @@
-<% include head %>
+<% include partials/head %>
 
 <main>
   <h1><%= data.question %></h1>
 
-  <form action="/submit-answer/<%= data.id %>" method="post">
-    <% data.options.forEach((option, i) => {
-      if (option.title) { %>
-        <input id="option<%= i + 1 %>" type="radio" name="option" value="option<%= i + 1 %>value">
-        <label for="option<%= i + 1 %>"><%= option.title %></label>
-      <% }
-    }) %>
+  <section>
+    <form action="/submit-answer/<%= data.id %>" method="post">
+      <% data.options.forEach((option, i) => {
+        if (option.title) { %>
+          <div class="option">
+            <input id="option<%= i + 1 %>" type="radio" name="option" value="option<%= i + 1 %>value">
+            <label class="option-label" for="option<%= i + 1 %>"><%= option.title %></label>
+          </div>
+        <% }
+      }) %>
 
-    <input type="submit" name="submit">
-  </form>
-
+      <input type="submit" name="submit" class="button">
+    </form>
+  </section>
 </main>
 
-<% include tail %>
+<% include partials/tail %>

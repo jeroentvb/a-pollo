@@ -1,22 +1,28 @@
-<% include head %>
+<% include partials/head %>
 
 <main>
-  <h1>Maak een poll</h1>
+  <h1>Create a poll</h1>
 
-  <form action="/create-poll" method="post">
-    <label for="question">Vraag</label>
-    <input id="question" type="text" name="question" placeholder="Is de aarde plat?">
+  <form id="form" action="/create-poll" method="post">
+    <label for="question">Question</label>
+    <input id="question" type="text" name="question" placeholder="Is IE the best browser ever?" required>
 
-    <h2>Antwoorden</h2>
-    <% for(let i=0; i < 6; i++) { %>
-      <label class="hidden" for="option-<%= i + 1 %>">Option <%= i + 1 %></label>
-      <input id="option-<%= i + 1 %>" type="text" name="option<%= i + 1 %>">
-    <% } %>
+    <h2>Options</h2>
+    <div id="options">
+      <% for (let i = 0; i < 5; i++) { %>
+        <label id="option-<%= i + 1 %>-label" for="option-<%= i + 1 %>">Option <%= i + 1 %></label>
+        <input id="option-<%= i + 1 %>" class="option" type="text" name="option<%= i + 1 %>" <% if (i < 2) { %>
+          required
+        <% } %> >
+      <% } %>
+    </div>
 
-    <input type="submit" name="more-options" value="Meer antwoorden" formaction="/more-options">
+    <input id="more-options" type="submit" class="button" name="more-options" value="More options" formaction="/more-options">
 
-    <input type="submit" name="submit">
+    <input type="submit" class="button" name="submit" value="Submit">
   </form>
 </main>
 
-<% include tail %>
+<script src="/js/create-poll.js"></script>
+
+<% include partials/tail %>

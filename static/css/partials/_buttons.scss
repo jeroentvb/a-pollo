@@ -1,0 +1,16 @@
+.button {
+  font-family: 'Fira Code', system-ui, sans-serif;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  min-width: 10rem;
+  display: inline-block;
+  text-align: center;
+  background-color: $color-primary;
+  color: #fff;
+  transition: background-color .3s;
+  font-size: 1.2rem;
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}

@@ -1,0 +1,40 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  #options {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .option {
+    margin-bottom: 1rem;
+  }
+
+  input {
+    &[type=text] {
+      border: 1px solid black;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border-radius: .2rem;
+      margin-bottom: 1.5rem;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    &[type=submit] {
+      margin: 1rem 0;
+      border: none;
+      font-family: 'Fira Code', system-ui, sans-serif;
+      appearance: none;
+      -webkit-appearance: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  label {
+    margin-bottom: .8rem;
+  }
+}

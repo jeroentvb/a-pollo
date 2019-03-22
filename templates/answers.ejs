@@ -1,4 +1,4 @@
-<% include head %>
+<% include partials/head %>
 
 <main>
   <h1><%= data.question %></h1>
@@ -12,10 +12,17 @@
     }) %>
   </section>
 
-  <section>
-    <h3>Deel de poll</h3>
+  <section id="share">
+    <h3>Share this poll</h3>
     <a href="<%= data.url %>" target="_blank"><%= data.url %></a>
+  </section>
+
+  <section>
+    <h3>Create a poll</h3>
+    <a href="/poll" class="button">Create</a>
   </section>
 </main>
 
-<% include tail %>
+<script src="/js/poll-data.js"></script>
+
+<% include partials/tail %>

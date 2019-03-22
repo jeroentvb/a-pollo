@@ -1,0 +1,24 @@
+<% include partials/head %>
+
+<main>
+  <h1>Maak een poll</h1>
+
+  <form id="form" action="/create-poll" method="post">
+    <label for="question">Vraag</label>
+    <input id="question" type="text" name="question" placeholder="Is IE the best browser ever?" required value="<%= data.question %>">
+
+    <h2>Options</h2>
+    <div id="options">
+      <% data.options.forEach((option, i) => { %>
+        <label id="option-<%= i + 1 %>-label" for="option-<%= i + 1 %>">Option <%= i + 1 %></label>
+        <input id="option-<%= i + 1 %>" type="text" name="option<%= i + 1 %>" value="<%= option %>" <% if (i < 2) { %>
+          required
+        <% } %> >
+      <% }) %>
+    </div>
+
+    <input type="submit" class="button" name="submit" value="Submit">
+  </form>
+</main>
+
+<% include partials/tail %>
