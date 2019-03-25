@@ -5,6 +5,8 @@ const chalk = require('chalk')
 const db = require('./modules/db')
 const render = require('./modules/render')
 
+const webSocket = require('./modules/websocket')
+
 require('dotenv').config()
 
 db.init()
@@ -65,9 +67,15 @@ async function createPoll (req, res) {
 async function submitAnswer (req, res) {
   const id = req.params.id
   const option = req.body.option
+  const data = {
+    id: id,
+    option: option
+  }
 
   try {
     await db.query(`UPDATE aPollo.polls set ${option} = ${option} + 1 WHERE id = ?`, id)
+
+    webSocket.broadcast(JSON.stringify(data))
 
     res.redirect(`/poll/${id}/answers`)
   } catch (err) {
