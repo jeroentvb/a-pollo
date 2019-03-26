@@ -2,8 +2,10 @@
 
 (() => {
   if (WebSocket) {
+    var wsUrl = `ws://${window.location.href.split('/')[2].split(':')[0]}:40510`
+
     // Create WebSocket connection.
-    var socket = new WebSocket('ws://localhost:40510')
+    var socket = new WebSocket(wsUrl)
 
     // Connection opened
     socket.addEventListener('open', function (event) {
