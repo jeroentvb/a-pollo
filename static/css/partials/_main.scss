@@ -45,3 +45,21 @@ section {
 .logo {
   max-width: 10rem;
 }
+
+.percentageBar {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: .2rem;
+  height: 2rem;
+  background-color: #f4f4f4;
+}
+
+.amount {
+  background-color: $color-secondary;
+  height: 2rem;
+  transition: width .4s;
+}
+
+.text {
+  margin-bottom: 2.5rem;
+}

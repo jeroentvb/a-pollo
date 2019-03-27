@@ -7,7 +7,10 @@
     <% data.options.forEach((option, i) => {
       if (option.title) { %>
         <h3><%= option.title %></h3>
-        <p class="option<%= i + 1 %>value"><%= option.value %></p>
+        <div class="percentageBar">
+          <div class="amount amount--<%= i + 1 %>" style="width: <%= option.percentage %>%"></div>
+        </div>
+        <p class="option<%= i + 1 %>value text"><%= option.percentage %>% (<%= option.value %> <%= option.value === 1 ? 'vote' : 'votes' %>)</p>
       <% }
     }) %>
   </section>

@@ -33,25 +33,25 @@ async function createPoll (req, res) {
   const data = {
     question: req.body.question,
     option1title: req.body.option1,
-    option1value: 0,
+    option1value: req.body.option1 ? 0 : null,
     option2title: req.body.option2,
-    option2value: 0,
+    option2value: req.body.option2 ? 0 : null,
     option3title: req.body.option3,
-    option3value: 0,
+    option3value: req.body.option3 ? 0 : null,
     option4title: req.body.option4,
-    option4value: 0,
+    option4value: req.body.option4 ? 0 : null,
     option5title: req.body.option5,
-    option5value: 0,
+    option5value: req.body.option5 ? 0 : null,
     option6title: req.body.option6,
-    option6value: 0,
+    option6value: req.body.option6 ? 0 : null,
     option7title: req.body.option7,
-    option7value: 0,
+    option7value: req.body.option7 ? 0 : null,
     option8title: req.body.option8,
-    option8value: 0,
+    option8value: req.body.option8 ? 0 : null,
     option9title: req.body.option9,
-    option9value: 0,
+    option9value: req.body.option9 ? 0 : null,
     option10title: req.body.option10,
-    option10value: 0
+    option10value: req.body.option10 ? 0 : null
   }
 
   try {
@@ -67,13 +67,15 @@ async function createPoll (req, res) {
 async function submitAnswer (req, res) {
   const id = req.params.id
   const option = req.body.option
-  const data = {
-    id: id,
-    option: option
-  }
+  // const data = {
+  //   id: id,
+  //   option: option
+  // }
 
   try {
     await db.query(`UPDATE aPollo.polls set ${option} = ${option} + 1 WHERE id = ?`, id)
+
+    const data = await db.getPollData(id)
 
     webSocket.broadcast(JSON.stringify(data))
 

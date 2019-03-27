@@ -16,10 +16,26 @@
     socket.addEventListener('message', function (event) {
       var id = window.location.pathname.split('/')[2]
       var data = JSON.parse(event.data)
+      console.log(data)
 
       if (data.id === id) {
-        var option = document.getElementsByClassName(data.option)[0]
-        option.textContent = parseInt(option.textContent) + 1
+        // update all statistics
+        // for (var i = 0; i < data.options.length; i++) {
+        //   if (data.options[i].value) {
+        //     var amount = document.getElementsByClassName('amount--' + i)[0]
+        //     amount.style.width = data.options[i].percentage + '%'
+        //   }
+        // }
+
+        data.options.forEach((option, i) => {
+          if (option.value) {
+            var amount = document.getElementsByClassName(`amount--${i + 1}`)[0]
+            amount.style.width = `${option.percentage}%`
+
+            var text = document.getElementsByClassName(`option${i + 1}value`)[0]
+            text.textContent = `${option.percentage}% (${option.value} ${option.value === 1 ? 'vote' : 'votes'})`
+          }
+        })
       }
     })
   }
