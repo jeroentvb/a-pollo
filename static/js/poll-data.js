@@ -1,16 +1,16 @@
 /* global WebSocket */
 
 (() => {
-  if (WebSocket) {
+  if ('WebSocket' in window) {
     var wsUrl = `ws://${window.location.href.split('/')[2].split(':')[0]}:40510`
 
     // Create WebSocket connection.
     var socket = new WebSocket(wsUrl)
 
     // Connection opened
-    socket.addEventListener('open', function (event) {
-      socket.send('Hello Server!')
-    })
+    // socket.addEventListener('open', function (event) {
+    //   socket.send('Hello Server!')
+    // })
 
     // Listen for messages
     socket.addEventListener('message', function (event) {
