@@ -4,20 +4,20 @@
   <h1><%= data.question %></h1>
 
   <section>
-    <% data.options.forEach(option => {
+    <% data.options.forEach((option, i) => {
       if (option.title) { %>
         <h3><%= option.title %></h3>
-        <p><%= option.value %></p>
+        <p class="option<%= i + 1 %>value"><%= option.value %></p>
       <% }
     }) %>
   </section>
 
   <section id="share">
     <h3>Share this poll</h3>
-    <a href="<%= data.url %>" target="_blank"><%= data.url %></a>
+    <a href="<%= data.url %>" target="_blank" id="share-link"><%= data.url %></a>
   </section>
 
-  <section>
+  <section id="create">
     <h3>Create a poll</h3>
     <a href="/poll" class="button">Create</a>
   </section>

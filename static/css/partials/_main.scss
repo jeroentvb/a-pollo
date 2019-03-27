@@ -1,4 +1,6 @@
 main {
+  margin-bottom: 2rem;
+
   &.home {
     text-align: center;
 
@@ -30,7 +32,13 @@ section {
   }
 
   &#share {
-    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &#create {
+    display: flex;
+    flex-direction: column;
   }
 }
 

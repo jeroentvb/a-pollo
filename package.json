@@ -10,23 +10,24 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
-    "nodemon": "^1.18.10",
     "ws": "^6.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
   "scripts": {
     "start": "node index.js",
     "setupdb": "node modules/setupdb.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeroentvb/browser-technologies-1819.git"
+    "url": "git+https://github.com/jeroentvb/a-pollo.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "jeroentvb",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jeroentvb/browser-technologies-1819/issues"
+    "url": "https://github.com/jeroentvb/a-pollo/issues"
   },
-  "homepage": "https://github.com/jeroentvb/browser-technologies-1819#readme"
+  "homepage": "https://github.com/jeroentvb/a-pollo#readme"
 }
