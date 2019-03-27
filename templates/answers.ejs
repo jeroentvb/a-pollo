@@ -8,9 +8,9 @@
       if (option.title) { %>
         <h3><%= option.title %></h3>
         <div class="percentageBar">
-          <div class="amount amount--<%= i + 1 %>" style="width: <%= option.percentage %>%"></div>
+          <div class="amount amount--<%= i + 1 %>" style="width: <%= option.percentage ? option.percentage : 0 %>%"></div>
         </div>
-        <p class="option<%= i + 1 %>value text"><%= option.percentage %>% (<%= option.value %> <%= option.value === 1 ? 'vote' : 'votes' %>)</p>
+        <p class="option<%= i + 1 %>value text"><%= option.percentage ? option.percentage : 0 %>% (<%= option.value %> <%= option.value === 1 ? 'vote' : 'votes' %>)</p>
       <% }
     }) %>
   </section>

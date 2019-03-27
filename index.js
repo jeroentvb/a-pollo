@@ -67,10 +67,6 @@ async function createPoll (req, res) {
 async function submitAnswer (req, res) {
   const id = req.params.id
   const option = req.body.option
-  // const data = {
-  //   id: id,
-  //   option: option
-  // }
 
   try {
     await db.query(`UPDATE aPollo.polls set ${option} = ${option} + 1 WHERE id = ?`, id)
