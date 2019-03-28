@@ -47,8 +47,6 @@ async function answers (req, res) {
   try {
     let data = await db.getPollData(id, url)
 
-    console.log(data)
-
     res.render('answers', { data: data })
   } catch (err) {
     console.error(err)

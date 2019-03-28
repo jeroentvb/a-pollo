@@ -12,6 +12,10 @@ require('dotenv').config()
 db.init()
 
 app()
+  // .use((req, res, next) => {
+  //   res.setHeader('Cache-Control', 'max-age=' + 30 * 24 * 60 * 60)
+  //   next()
+  // })
   .set('view engine', 'ejs')
   .set('views', 'templates')
   .use(app.static('static'))
