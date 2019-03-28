@@ -8,11 +8,49 @@ form {
   }
 
   .option {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
+
+    &__label {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 
   label {
     margin-bottom: .8rem;
+    display: block;
+  }
+}
+
+.radiobtn {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: grey;
+  margin-right: 1rem;
+  border-radius: 50%;
+  &:after {
+    content: '';
+    display: none;
+  }
+}
+
+label input[type=radio]:checked {
+  &~ .radiobtn {
+    background-color: $color-primary;
+
+    &::after {
+      display: block;
+      width: .8rem;
+      height: .8rem;
+      border-radius: 50%;
+      margin: .6rem 0 0 .6rem;
+      background-color: #fff;
+    }
   }
 }
 
@@ -41,5 +79,10 @@ input {
     &:hover {
       cursor: pointer;
     }
+  }
+
+  &[type=radio] {
+    // margin-right: 1rem;
+    display: none;
   }
 }

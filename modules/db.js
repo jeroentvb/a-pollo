@@ -118,8 +118,6 @@ function getPollData (id, url) {
         }
       })
 
-      console.log(data)
-
       resolve(data)
     } catch (err) {
       console.error(err)
