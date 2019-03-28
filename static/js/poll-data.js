@@ -1,4 +1,4 @@
-/* global WebSocket */
+/* global WebSocket, location */
 
 (() => {
   if ('WebSocket' in window) {
@@ -37,6 +37,24 @@
           }
         })
       }
+    })
+  } else {
+    var section = document.getElementsByClassName('statistics')[0]
+
+    var h4 = document.createElement('h4')
+    var text = document.createTextNode('Reload the page to refresh the statistics')
+    h4.appendChild(text)
+
+    var button = document.createElement('button')
+    button.classList.add('button')
+    var text2 = document.createTextNode('Reload')
+    button.appendChild(text2)
+
+    section.appendChild(h4)
+    section.appendChild(button)
+
+    button.addEventListener('click', function () {
+      location.reload(false)
     })
   }
 
