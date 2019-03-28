@@ -25,6 +25,11 @@ input {
     margin-bottom: 1.5rem;
     appearance: none;
     -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    @supports (display: flex) {
+      width: auto;
+    }
   }
 
   &[type=submit] {
