@@ -73,7 +73,7 @@
   copyButton.classList.add('button')
   copyButton.dataset.url = url
   var copyText = document.createTextNode('Copy url')
-  button.appendChild(copyText)
+  copyButton.appendChild(copyText)
 
   shareSection.appendChild(input)
   shareSection.appendChild(copyButton)
