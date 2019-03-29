@@ -1,6 +1,6 @@
 /* global WebSocket, location */
 
-(() => {
+(function () {
   if ('WebSocket' in window) {
     var wsUrl = `ws://${window.location.href.split('/')[2].split(':')[0]}:40510`
 
@@ -69,14 +69,14 @@
   input.classList.add('option')
   input.value = url
 
-  var button = document.createElement('button')
-  button.classList.add('button')
-  button.dataset.url = url
-  var text = document.createTextNode('Copy url')
-  button.appendChild(text)
+  var copyButton = document.createElement('button')
+  copyButton.classList.add('button')
+  copyButton.dataset.url = url
+  var copyText = document.createTextNode('Copy url')
+  button.appendChild(copyText)
 
   shareSection.appendChild(input)
-  shareSection.appendChild(button)
+  shareSection.appendChild(copyButton)
 
   button.addEventListener('click', function () {
     input.select()
